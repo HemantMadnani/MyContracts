@@ -1,18 +1,17 @@
 pragma solidity 0.4.24;
 
 
-import  "openzeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol";
-import  "openzeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol";
-import "./GToken.sol";
-import  "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import  "http://github.com/HemantMadnani/MyContracts/crowdsale/validation/TimedCrowdsale.sol";
+import  "http://github.com/HemantMadnani/MyContracts/crowdsale/validation/WhitelistedCrowdsale.sol";
+import "http://github.com/HemantMadnani/MyContracts/contracts/GToken.sol";
+import  "http://github.com/HemantMadnani/MyContracts/token/ERC20/ERC20.sol";
 
 
-contract GSale is Crowdsale{
-// GToken public tokenContract;
+contract GSale is WhitelistedCrowdsale {
+GToken public tokenContract;
 	constructor()
 	 public
-	 // TimedCrowdsale(now + 1 minutes,now + 30 minutes) 
-	Crowdsale(1000,msg.sender,ERC20(0x8773793681eb973e6c4ce5181c3585a2c1252fa6))
+	 Crowdsale(1000,msg.sender,ERC20(0x692a70d2e424a56d2c6c27aa97d1a86395877b3a))
 	{
 
 
