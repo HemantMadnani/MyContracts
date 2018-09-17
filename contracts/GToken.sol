@@ -1,16 +1,16 @@
-pragma solidity 0.4.24;
-import "openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
-import  "openzeppelin-solidity/contracts/token/ERC20/CappedToken.sol";
-import  "openzeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol";
+pragma solidity ^0.4.24;
+import "http://github.com/HemantMadnani/MyContracts/token/ERC20/PausableToken.sol";
+import "http://github.com/HemantMadnani/MyContracts/token/ERC20/MintableToken.sol";
+import "http://github.com/HemantMadnani/MyContracts/token/ERC20/DetailedERC20.sol";
 
-contract GToken is PausableToken,CappedToken,DetailedERC20{
+contract GToken is PausableToken,DetailedERC20,MintableToken{
 
 
 constructor() public
-CappedToken(5000) DetailedERC20("GToken","GT",2)
+ DetailedERC20("GToken","GT",2)
 {
-totalSupply_ = 1200;
-balances[msg.sender] = 1200;
+totalSupply_ = 1200000;
+balances[msg.sender] = 1200000;
 }
 
 }
