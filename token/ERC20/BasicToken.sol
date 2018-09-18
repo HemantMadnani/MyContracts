@@ -29,7 +29,7 @@ contract BasicToken is ERC20Basic {
   * @param _value The amount to be transferred.
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
-    require(_value <= balances[msg.sender],"Insufficent Funds and msg.sender="+msg.sender);
+    require(_value <= balances[msg.sender],"Insufficent Funds");
     require(_to != address(0),"Nounce Value found");
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
