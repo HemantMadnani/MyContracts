@@ -91,7 +91,7 @@ contract Crowdsale {
     // update state
     weiRaised = weiRaised.add(weiAmount);
 
-   require((_processPurchase(_beneficiary, tokens)),"Error in process purchase");
+   _processPurchase(_beneficiary, tokens);
     emit TokenPurchase(
       msg.sender,
       _beneficiary,
