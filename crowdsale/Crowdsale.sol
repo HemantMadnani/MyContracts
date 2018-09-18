@@ -152,14 +152,14 @@ contract Crowdsale {
   )
     internal
   {
-   require(_value <= balances[owner],"Insufficent Funds");
-    require(_beneficiary != address(0),"Nounce Value found");
+   //require(_value <= balances[owner],"Insufficent Funds");
+   // require(_beneficiary != address(0),"Nounce Value found");
 
-    balances[owner] = balances[owner].sub(_value);
-    balances[_beneficiary] = balances[_beneficiary].add(_value);
-    emit Transfer(owner, _beneficiary, _value);
-    return true;
-    //token.safeTransfer(_beneficiary, _tokenAmount);
+    //balances[owner] = balances[owner].sub(_value);
+    //balances[_beneficiary] = balances[_beneficiary].add(_value);
+    //emit Transfer(owner, _beneficiary, _value);
+    //return true;
+    token.safeTransfer(_beneficiary, _tokenAmount);
   }
 
   /**
